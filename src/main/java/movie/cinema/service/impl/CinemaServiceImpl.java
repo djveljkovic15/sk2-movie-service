@@ -18,7 +18,16 @@ public class CinemaServiceImpl implements CinemaService {
 
 
     @Override
-    public Cinema saveOrUpdate(Cinema cinema) {
+    public Cinema save(Cinema cinema) {
+        return repository.save(cinema);
+    }
+
+    @Override
+    public Cinema update(Long id, Cinema cinema) {
+        if(findById(id) == null)
+            return null;
+
+        cinema.setId(id);
         return repository.save(cinema);
     }
 
@@ -36,4 +45,9 @@ public class CinemaServiceImpl implements CinemaService {
     public List<Cinema> findAll() {
         return repository.findAll();
     }
+
+//    @Override
+//    public Cinema findByName(String name) {
+//        return repository.findByName(name);
+//    }
 }

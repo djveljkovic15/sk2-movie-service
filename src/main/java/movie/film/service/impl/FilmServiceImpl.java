@@ -18,7 +18,15 @@ public class FilmServiceImpl implements FilmService {
 
 
     @Override
-    public Film saveOrUpdate(Film film) {
+    public Film save(Film film) {
+        return repository.save(film);
+    }
+
+    @Override
+    public Film update(Long id, Film film) {
+        if(findById(id)==null)
+            return null;
+        film.setId(id);
         return repository.save(film);
     }
 

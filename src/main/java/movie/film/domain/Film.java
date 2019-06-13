@@ -25,8 +25,6 @@ public class Film {
     @NotBlank
     private String name;
 
-    @NotNull
-    @NotBlank
     private String genre;
 
     private String description;

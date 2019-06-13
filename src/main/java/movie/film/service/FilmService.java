@@ -5,7 +5,9 @@ import movie.film.domain.Film;
 import java.util.List;
 
 public interface FilmService {
-    Film saveOrUpdate(Film film);
+    Film save(Film film);
+
+    Film update(Long id, Film film);
 
     void deleteById(Long id);
 
