@@ -1,28 +1,27 @@
-package movie.cinema.domain;
+package movie.hall.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 
 @Entity
-@Table(name="cinema")
+@Table(name="hall")
 @Data
 @NoArgsConstructor
-public class Cinema {
+public class Hall {
 
     @Id
-    @Column(name = "cinema_id")
+    @Column(name = "hall_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     @PositiveOrZero
-    @Column(name = "cinema_number", unique = true)
-    private Integer cinemaNumber;
+    @Column(name = "hall_number", unique = true)
+    private Integer hallNumber;
 
     @NotNull
     @PositiveOrZero

@@ -23,6 +23,7 @@ public class Film {
 
     @NotNull
     @NotBlank
+    @Column(unique = true)
     private String name;
 
     private String genre;

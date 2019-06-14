@@ -42,7 +42,7 @@ public class FilmController {
 
     @CheckSecurity(roles = {"ADMIN"})
     @DeleteMapping("/delete/{filmId}")
-    @ApiOperation(value = "Deletes cinema.")
+    @ApiOperation(value = "Deletes hall.")
     public ResponseEntity<?> deleteById(@RequestHeader("Authorization") String authorization,
                                         @PathVariable Long filmId){
         service.deleteById(filmId);
